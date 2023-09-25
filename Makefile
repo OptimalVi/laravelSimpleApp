@@ -3,6 +3,7 @@ startup:
 	@docker-compose up -d
 	@docker-compose exec -i php composer install
 	@docker-compose exec -i php php artisan key:generate --ansi
+	@docker-compose exec -i php php artisan migrate
 
 .PHONY: up
 up:
